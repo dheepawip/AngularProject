@@ -1,0 +1,39 @@
+<form  class="train-form" #trainingForm="ngForm" (ngSubmit)="onSubmit(trainingForm)">
+    <div class="form-row" >
+        <div class="form-group col-md-5">
+            <span>Training Name</span>
+        </div>
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="TrainingName" #TrainingName="ngModel" [(ngModel)]="trainingService.selectedTraining.TrainingName" placeholder="Training Name" required>
+            <div class="validation-error" *ngIf="TrainingName.invalid && TrainingName.touched">This field is required</div>
+        </div>
+        
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            <span>Start Date</span>
+        </div>
+        <div class="form-group col-md-6">
+            <input type="date" class="form-control" name="StartDate" #StartDate="ngModel" [(ngModel)]="trainingService.selectedTraining.StartDate" placeholder="Start Date" required>
+            <div class="validation-error" *ngIf="StartDate.invalid && StartDate.touched">This field is required</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            <span>End Date</span>
+        </div>
+        <div class="form-group col-md-6">
+            <input type="date" class="form-control" name="EndDate" #EndDate="ngModel" [(ngModel)]="trainingService.selectedTraining.EndDate" placeholder="End Date" required>
+            <div class="validation-error" *ngIf="EndDate.invalid && EndDate.touched">This field is required</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            <button [disabled]="!trainingForm.valid" type="submit" class="btn btn-lg btn-block btn-info"><i class="fa fa-floppy-o">&nbsp;Confirm</i></button>
+        </div>
+        <div class="form-group col-md-5">
+            <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(trainingForm)"><i class="fa fa-repeat">&nbsp;Reset</i></button>
+        </div>
+    </div>
+   
+</form>

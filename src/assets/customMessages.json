@@ -1,0 +1,7 @@
+[   
+    {
+        "msgSuccess": "New training added successfully. ",
+        "msgDate": "The duration between Start Date and End Date is ",
+        "msgDateDiff": "Start Date should not be greater than End Date."
+    }
+]

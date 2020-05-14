@@ -1,0 +1,16 @@
+<div style="width: 500px; height: 500px; overflow-y: scroll;">
+    <table class="table table-sm table-hover train-form" >
+        <tr>
+            <th scope="col">Training No</th>
+            <th scope="col">Training Name</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>            
+            </tr>
+        <tr *ngFor="let training of trainingService.trainingList">
+            <td>{{training.TrainingID}}</td>
+            <td>{{training.TrainingName}}</td>
+            <td>{{training.StartDate | date: "shortDate" }}</td>
+            <td>{{training.EndDate | date: "shortDate" }}</td>
+        </tr>
+    </table>
+</div>
